@@ -14,6 +14,11 @@ pub fn classify_u32s(v: &[u32]) -> Vec<U32> {
 }
 
 
+pub fn classify_u8s(v: &[u8]) -> Vec<U8> {
+    v.iter().map(|x| U8::classify(*x)).collect()
+}
+
+
 fn line(a:Index, b:Index, d:Index, s:RotVal, m: &mut State) {
     m[a] = m[a] + m[b];
     m[d] = m[d] ^ m[a];
